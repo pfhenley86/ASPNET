@@ -1,18 +1,25 @@
-@model TModel
+@model IEnumerable<Product>
 
-@{
-    Layout = null;
-}
+<h2>Products</h2>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
-</div>
-</body>
-</html>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>Stick Level</th>
+    </tr>
+    
+    @foreach (var product in @Model)
+    {
+        <tr>
+            <td>@product.ProductID</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.CategoryID</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+</table>
