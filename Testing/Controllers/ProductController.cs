@@ -11,10 +11,17 @@ public class ProductController : Controller
     {
         this.repo = repo;
     }
-    // GET
+    // GET ALL
     public IActionResult Index()
     {
         var products = repo.GetAllProducts();
         return View(products);
+    }
+    
+    // VIEW SINGLE PRODUCT
+    public IActionResult ViewProduct(int id)
+    {
+        var product = repo.GetProduct(id);
+        return View(product);
     }
 }
