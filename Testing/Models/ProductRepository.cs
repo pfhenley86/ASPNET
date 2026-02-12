@@ -33,7 +33,7 @@ public class ProductRepository : IProductRepository
 
     public void InsertProduct(Product productToInsert)
     {
-        _conn.Execute("INSERT INTO product (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID)", new {
+        _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID)", new {
                 name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID
             });
     }
